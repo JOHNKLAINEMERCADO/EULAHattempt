@@ -1,0 +1,304 @@
+"use client";
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { useAnalysis } from "@/components/AnalysisProvider";
+import {
+  ArrowLeft,
+  Sparkles,
+  AlertTriangle,
+  Info,
+  CheckCircle,
+  AlertCircle,
+  Scale,
+} from "lucide-react";
+
+const riskConfig = {
+  HIGH: {
+    border: "border-red-200",
+    bg: "bg-red-50",
+    text: "text-red-700",
+    badge: "bg-red-100 text-red-700",
+    iconBg: "bg-red-500",
+    leftBorder: "border-l-red-400",
+    bannerBg: "bg-gradient-to-r from-red-50 to-red-100/50",
+    bannerBorder: "border-red-200",
+    bannerText: "text-red-700",
+  },
+  MEDIUM: {
+    border: "border-yellow-200",
+    bg: "bg-yellow-50",
+    text: "text-yellow-700",
+    badge: "bg-yellow-100 text-yellow-700",
+    iconBg: "bg-yellow-500",
+    leftBorder: "border-l-yellow-400",
+    bannerBg: "bg-gradient-to-r from-yellow-50 to-yellow-100/50",
+    bannerBorder: "border-yellow-200",
+    bannerText: "text-yellow-700",
+  },
+  LOW: {
+    border: "border-green-200",
+    bg: "bg-green-50",
+    text: "text-green-700",
+    badge: "bg-green-100 text-green-700",
+    iconBg: "bg-green-500",
+    leftBorder: "border-l-green-400",
+    bannerBg: "bg-gradient-to-r from-green-50 to-green-100/50",
+    bannerBorder: "border-green-200",
+    bannerText: "text-green-700",
+  },
+};
+
+export default function ResultsPage() {
+  const router = useRouter();
+  const { result, originalText, clear } = useAnalysis();
+
+  // Redirect if no result available
+  useEffect(() => {
+    if (!result) {
+      router.replace("/analyzer");
+    }
+  }, [result, router]);
+
+  if (!result) return null;
+
+  const overall = riskConfig[result.overallRisk];
+
+  const stats = [
+    {
+      label: "Total Risks",
+      value: result.totalRisks,
+      icon: AlertCircle,
+      iconBg: "bg-[#E8F5D6]",
+      iconColor: "text-[#9BC53D]",
+    },
+    {
+      label: "High Risk",
+      value: result.highRisks,
+      icon: AlertTriangle,
+      iconBg: "bg-red-100",
+      iconColor: "text-red-500",
+    },
+    {
+      label: "Medium Risk",
+      value: result.mediumRisks,
+      icon: Info,
+      iconBg: "bg-yellow-100",
+      iconColor: "text-yellow-500",
+    },
+    {
+      label: "Low Risk",
+      value: result.lowRisks,
+      icon: CheckCircle,
+      iconBg: "bg-green-100",
+      iconColor: "text-green-500",
+    },
+  ];
+
+  return (
+    <div className="flex min-h-full flex-col bg-[#F9FAF5]">
+      <Navbar />
+      <main className="flex flex-1 flex-col items-center px-6 py-10">
+        <div className="mx-auto w-full max-w-3xl">
+          {/* Back link */}
+          <Link
+            href="/analyzer"
+            onClick={clear}
+            className="mb-6 inline-flex items-center gap-2 text-xs font-medium text-[#9BC53D] transition-colors hover:text-[#7a9c2e]"
+          >
+            <ArrowLeft className="h-3.5 w-3.5" />
+            Analyze Another Document
+          </Link>
+
+          {/* Analysis Complete badge */}
+          <div className="mb-4 flex items-center gap-2">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#C5D9A6] bg-[#E8F5D6] px-4 py-1.5 text-xs font-medium text-[#5a7a2e]">
+              <Sparkles className="h-3.5 w-3.5" />
+              Analysis Complete
+            </div>
+          </div>
+
+          {/* Demo mode banner */}
+          {result.isDemo && (
+            <div className="mb-4 rounded-xl border border-yellow-200 bg-yellow-50 px-4 py-3">
+              <p className="text-xs text-yellow-700">
+                <span className="font-semibold">Demo Mode:</span> Running
+                keyword-based analysis. Add a{" "}
+                <code className="rounded bg-white px-1 py-0.5 font-mono text-[10px]">
+                  NEXT_PUBLIC_GEMINI_API_KEY
+                </code>{" "}
+                to your{" "}
+                <code className="rounded bg-white px-1 py-0.5 font-mono text-[10px]">
+                  .env.local
+                </code>{" "}
+                file for full AI-powered analysis with Gemini.
+              </p>
+            </div>
+          )}
+
+          {/* Title */}
+          <h1 className="text-4xl font-bold tracking-tight text-[#1a1a1a]">
+            Risk{" "}
+            <span className="text-[#9BC53D]">Assessment</span>
+          </h1>
+
+          {/* Subtitle */}
+          <p className="mt-2 text-sm text-[#666]">
+            We found{" "}
+            <span className="font-semibold text-[#1a1a1a]">
+              {result.totalRisks}
+            </span>{" "}
+            potentially risky clauses in your document
+          </p>
+
+          {/* Stats Cards */}
+          <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {stats.map((stat) => {
+              const Icon = stat.icon;
+              return (
+                <div
+                  key={stat.label}
+                  className="flex flex-col gap-3 rounded-2xl border border-[#E8EDDE] bg-white p-5"
+                >
+                  <div
+                    className={`flex h-8 w-8 items-center justify-center rounded-full ${stat.iconBg}`}
+                  >
+                    <Icon className={`h-4 w-4 ${stat.iconColor}`} />
+                  </div>
+                  <div>
+                    <p className="text-2xl font-bold text-[#1a1a1a]">
+                      {stat.value}
+                    </p>
+                    <p className="text-[11px] text-[#888]">{stat.label}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Overall Risk Banner */}
+          <div
+            className={`mt-6 rounded-2xl border ${overall.bannerBorder} ${overall.bannerBg} p-5`}
+          >
+            <div className="flex items-center gap-3">
+              <div
+                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${overall.iconBg}`}
+              >
+                <AlertTriangle className="h-4 w-4 text-white" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-[#1a1a1a]">
+                  Overall Risk:{" "}
+                  <span className={`${overall.bannerText}`}>
+                    {" "}
+                    {result.overallRisk === "HIGH"
+                      ? "High Risk"
+                      : result.overallRisk === "MEDIUM"
+                        ? "Medium Risk"
+                        : "Low Risk"}
+                  </span>
+                </p>
+                <p className="mt-1 text-xs leading-relaxed text-[#666]">
+                  {result.overallRiskMessage}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Detected Risky Clauses */}
+          <section className="mt-10">
+            <div className="mb-5 flex items-center gap-2">
+              <Sparkles className="h-4 w-4 text-[#9BC53D]" />
+              <h2 className="text-base font-bold text-[#1a1a1a]">
+                Detected Risky Clauses
+              </h2>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              {result.clauses.map((clause) => {
+                const cfg = riskConfig[clause.riskLevel];
+                return (
+                  <div
+                    key={clause.id}
+                    className={`rounded-2xl border ${cfg.border} ${cfg.bg} ${cfg.leftBorder} border-l-4 p-5`}
+                  >
+                    {/* Header */}
+                    <div className="mb-3 flex items-center gap-3">
+                      <div
+                        className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full ${cfg.iconBg}`}
+                      >
+                        <AlertTriangle className="h-3 w-3 text-white" />
+                      </div>
+                      <span className="text-sm font-semibold text-[#1a1a1a]">
+                        {clause.type}
+                      </span>
+                      <span
+                        className={`rounded-full px-2.5 py-0.5 text-[10px] font-semibold uppercase ${cfg.badge}`}
+                      >
+                        {clause.riskLevel}
+                      </span>
+                    </div>
+
+                    {/* Clause text */}
+                    <blockquote className="mb-3 rounded-xl border border-[#E8EDDE]/60 bg-white/60 px-4 py-3 text-xs italic leading-relaxed text-[#555]">
+                      &ldquo;{clause.clauseText}&rdquo;
+                    </blockquote>
+
+                    {/* Explanation */}
+                    <div>
+                      <span className="text-xs font-bold text-[#1a1a1a]">
+                        Why this matters:{" "}
+                      </span>
+                      <span className="text-xs leading-relaxed text-[#666]">
+                        {clause.explanation}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+
+          {/* Original Document */}
+          <section className="mt-10">
+            <h2 className="mb-4 text-base font-bold text-[#1a1a1a]">
+              Original Document
+            </h2>
+            <div className="rounded-2xl border border-[#E8EDDE] bg-white p-6 shadow-sm">
+              <div className="max-h-[400px] overflow-y-auto rounded-xl border border-[#E8EDDE] bg-[#FAFBF7] p-4">
+                <pre className="whitespace-pre-wrap font-mono text-[11px] leading-relaxed text-[#555]">
+                  {originalText}
+                </pre>
+              </div>
+            </div>
+          </section>
+
+          {/* Legal Notice */}
+          <section className="mt-6">
+            <div className="flex items-start gap-3 rounded-2xl border border-[#E8EDDE] bg-white p-5">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#E8F5D6]">
+                <Scale className="h-4 w-4 text-[#9BC53D]" />
+              </div>
+              <div>
+                <h3 className="text-xs font-bold text-[#1a1a1a]">
+                  Important Legal Notice
+                </h3>
+                <p className="mt-1 text-[11px] leading-relaxed text-[#888]">
+                  This analysis is for informational purposes only and does not
+                  constitute legal advice. The AI-assisted detection system may
+                  not identify all potential risks. For legal matters, please
+                  consult with a qualified attorney. EULAH is not liable for any
+                  decisions made based on this analysis.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <Footer />
+    </div>
+  );
+}
