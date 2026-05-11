@@ -9,10 +9,10 @@ export default function AnalysisFeatures() {
     <section className="mx-auto mt-16 w-full max-w-4xl px-6">
       <div className="mb-8 text-center">
         <div className="mb-3 flex items-center justify-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-eulah-light">
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-eulah-light dark:bg-[#15240d]">
             <Sparkles className="h-4 w-4 text-eulah" />
           </div>
-          <h2 className="text-xl font-bold text-text-primary">AI-Assisted Analysis</h2>
+          <h2 className="text-xl font-bold font-serif text-text-primary">AI-Assisted Analysis</h2>
         </div>
         <p className="text-sm text-text-secondary">
           Advanced Natural Language Processing that understands context, intent,

@@ -6,13 +6,13 @@ export default function AboutHero() {
   return (
     <div className="mx-auto w-full max-w-3xl">
       <div className="mb-6 flex justify-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-eulah-muted bg-eulah-light px-4 py-1.5 text-xs font-medium text-eulah-dark">
+        <div className="inline-flex items-center gap-2 rounded-full border border-eulah-muted bg-eulah-light px-4 py-1.5 text-xs font-medium text-eulah-dark dark:border-[#42501d] dark:bg-[#15240d] dark:text-[#cfe9ad]">
           <Leaf className="h-3.5 w-3.5" />
           About EULAH
         </div>
       </div>
 
-      <h1 className="text-center text-4xl font-bold tracking-tight text-text-primary sm:text-5xl">
+      <h1 className="text-center text-4xl font-bold font-serif tracking-tight text-text-primary sm:text-5xl">
         Enhanced User
         <br />
         <span className="text-eulah">License Agreement</span>

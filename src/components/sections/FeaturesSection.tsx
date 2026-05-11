@@ -64,11 +64,11 @@ export default function FeaturesSection() {
                 key={feature.title}
                 className="flex flex-col gap-4 rounded-2xl border border-border bg-card p-6 transition-shadow hover:shadow-lg hover:shadow-eulah/5"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-eulah-light">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-eulah-light dark:bg-[#182e16]">
                   <Icon className="h-5 w-5 text-eulah" />
                 </div>
                 <div>
-                  <h3 className="text-base font-semibold text-text-primary">
+                  <h3 className="text-base font-semibold font-serif text-text-primary">
                     {feature.title}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-text-secondary">

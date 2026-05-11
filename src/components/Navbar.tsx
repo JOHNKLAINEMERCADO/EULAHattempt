@@ -32,7 +32,7 @@ export default function Navbar() {
             priority
           />
           <div className="flex flex-col leading-none">
-            <span className="text-lg font-bold tracking-tight text-text-primary">
+            <span className="text-lg font-bold tracking-tight text-text-primary font-serif">
               EULAH
             </span>
             <span className="text-[10px] font-medium tracking-wide text-eulah">
@@ -57,7 +57,7 @@ export default function Navbar() {
                 >
                   {link.label}
                   {active && (
-                    <span className="absolute bottom-[-2px] left-0 h-[2.5px] w-full rounded-full bg-eulah" />
+                    <span className="absolute -bottom-0.5 left-0 h-[2.5px] w-full rounded-full bg-eulah" />
                   )}
                 </Link>
               );

@@ -15,7 +15,7 @@ export default function LimitationsSection() {
     <div className="flex flex-col rounded-2xl border border-border bg-card p-6 shadow-sm">
       <div className="mb-4 flex items-center gap-2">
         <AlertTriangle className="h-4 w-4 text-eulah" />
-        <h3 className="text-sm font-bold text-text-primary">Important Limitations</h3>
+        <h3 className="text-sm font-bold font-serif text-text-primary">Important Limitations</h3>
       </div>
       <div className="flex flex-1 flex-col gap-3">
         {limitations.map((limit) => (
@@ -29,8 +29,8 @@ export default function LimitationsSection() {
         ))}
       </div>
 
-      <div className="mt-4 rounded-xl bg-eulah-light p-3">
-        <p className="flex items-start gap-2 text-[11px] leading-relaxed text-eulah-dark">
+      <div className="mt-4 rounded-xl bg-eulah-light p-3 dark:bg-[#15240d]">
+        <p className="flex items-start gap-2 text-[11px] leading-relaxed text-eulah-dark dark:text-[#cfe9ad]">
           <CircleAlert className="mt-0.5 h-3.5 w-3.5 shrink-0" />
           <span>
             <span className="font-semibold">Legal Disclaimer:</span> For

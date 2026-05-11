@@ -7,12 +7,12 @@ export default function AboutCTA() {
   return (
     <section className="mx-auto mt-16 w-full max-w-3xl px-6 pb-10">
       <div className="flex flex-col items-center gap-5 rounded-3xl bg-border/50 px-6 py-12 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-eulah-muted bg-eulah-light px-4 py-1.5 text-xs font-medium text-eulah-dark">
+        <div className="inline-flex items-center gap-2 rounded-full border border-eulah-muted bg-eulah-light px-4 py-1.5 text-xs font-medium text-eulah-dark dark:border-[#42501d] dark:bg-[#15240d] dark:text-[#cfe9ad]">
           <ArrowRight className="h-3.5 w-3.5" />
           Join the Movement
         </div>
 
-        <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">
+        <h2 className="text-3xl font-bold font-serif text-text-primary sm:text-4xl">
           Ready to
           <br />
           <span className="text-eulah">Take Control?</span>

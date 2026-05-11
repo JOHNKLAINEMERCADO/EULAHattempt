@@ -12,6 +12,8 @@
   --text-secondary: #666666;
   --text-muted: #888888;
   --nav-bg: #F9FAF5;
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-cormorant);
 }
 
 .dark {
@@ -40,14 +42,28 @@
   --color-eulah-dark: #7a9c2e;
   --color-eulah-light: #E8F5D6;
   --color-eulah-muted: #E8EDDE;
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-cormorant);
   --font-mono: var(--font-geist-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   transition: background 0.3s ease, color 0.3s ease;
+}
+
+.font-serif {
+  font-family: var(--font-serif), Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.font-sans {
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 @keyframes pageEnter {

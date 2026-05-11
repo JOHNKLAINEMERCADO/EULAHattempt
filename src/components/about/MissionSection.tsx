@@ -51,19 +51,19 @@ export default function MissionSection() {
         <div className="w-full rounded-2xl border border-border bg-card p-6 shadow-sm sm:w-72">
           <div className="grid grid-cols-2 gap-6">
             <div>
-              <span className="text-2xl font-bold text-eulah">99.8%</span>
+              <span className="text-2xl font-bold text-eulah font-serif">99.8%</span>
               <p className="mt-1 text-[10px] text-text-muted">Accuracy Rate</p>
             </div>
             <div>
-              <span className="text-2xl font-bold text-eulah">&lt;2s</span>
+              <span className="text-2xl font-bold text-eulah font-serif">&lt;2s</span>
               <p className="mt-1 text-[10px] text-text-muted">Analysis Time</p>
             </div>
             <div>
-              <span className="text-2xl font-bold text-eulah">47+</span>
+              <span className="text-2xl font-bold text-eulah font-serif">47+</span>
               <p className="mt-1 text-[10px] text-text-muted">Risk Types</p>
             </div>
             <div>
-              <span className="text-2xl font-bold text-eulah">100K+</span>
+              <span className="text-2xl font-bold text-eulah font-serif">100K+</span>
               <p className="mt-1 text-[10px] text-text-muted">Docs Scanned</p>
             </div>
           </div>

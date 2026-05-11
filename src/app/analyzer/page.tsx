@@ -83,16 +83,16 @@ export default function AnalyzerPage() {
         <div className="mx-auto w-full max-w-3xl">
           {/* Page badge */}
           <div className="mb-6 flex justify-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-eulah-muted bg-eulah-light px-4 py-1.5 text-xs font-medium text-eulah-dark">
+            <div className="inline-flex items-center gap-2 rounded-full border border-eulah-muted bg-eulah-light px-4 py-1.5 text-xs font-medium text-eulah-dark dark:border-[#42501d] dark:bg-[#15240d] dark:text-[#cfe9ad]">
               <Sparkles className="h-3.5 w-3.5" />
               AI-Assisted Analysis
             </div>
           </div>
 
           {/* Title */}
-          <h1 className="text-center text-4xl font-bold tracking-tight text-text-primary sm:text-5xl">
+          <h1 className="text-center text-4xl font-bold font-serif tracking-tight text-text-primary sm:text-5xl">
             Document{" "}
-            <span className="text-[#9BC53D]">Analyzer</span>
+            <span className="text-eulah">Analyzer</span>
           </h1>
 
           {/* Subtitle */}
@@ -104,7 +104,7 @@ export default function AnalyzerPage() {
           {/* Document Input Card */}
           <div className="mt-8 rounded-2xl border border-border bg-card p-6 shadow-sm">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-sm font-semibold text-text-primary">
+              <h2 className="text-sm font-semibold font-serif text-text-primary">
                 Legal Document Text
               </h2>
               <div className="flex items-center gap-4 text-xs text-eulah">
@@ -132,7 +132,7 @@ export default function AnalyzerPage() {
                 onChange={(e) => setText(e.target.value)}
                 disabled={isAnalyzing}
                 placeholder={`Paste your Terms of Service, Privacy Policy, EULA, or any legal document here...\n\nWe'll analyze it and highlight potential risks like:\n• Automatic subscription renewals\n• Data collection and sharing\n• Forced arbitration clauses\n• Liability waivers\n• Unilateral term changes\n• And much more...`}
-                className="min-h-[280px] w-full resize-none rounded-xl border border-border bg-card-secondary p-4 text-sm leading-relaxed text-text-primary placeholder:text-text-muted focus:border-eulah focus:outline-none focus:ring-1 focus:ring-eulah disabled:opacity-60"
+                className="min-h-70 w-full resize-none rounded-xl border border-border bg-card-secondary p-4 text-sm leading-relaxed text-text-primary placeholder:text-text-muted focus:border-eulah focus:outline-none focus:ring-1 focus:ring-eulah disabled:opacity-60"
               />
               <span className="absolute bottom-3 right-3 rounded-full border border-border bg-card px-2.5 py-1 text-[10px] text-text-muted">
                 {text.length} characters
@@ -140,7 +140,7 @@ export default function AnalyzerPage() {
             </div>
 
             {error && (
-              <div className="mt-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+              <div className="mt-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600 dark:border-red-700/50 dark:bg-red-950/30 dark:text-red-200">
                 {error}
               </div>
             )}
@@ -173,10 +173,10 @@ export default function AnalyzerPage() {
                   key={cat.label}
                   className="flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-5 transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-eulah-light">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-eulah-light dark:bg-[#15240d]">
                     <Icon className="h-5 w-5 text-eulah" />
                   </div>
-                  <span className="text-xs font-semibold text-text-primary">
+                  <span className="text-xs font-semibold font-serif text-text-primary">
                     {cat.label}
                   </span>
                 </div>
@@ -190,7 +190,7 @@ export default function AnalyzerPage() {
               <Sparkles className="h-5 w-5 text-white" />
             </div>
             <div className="flex-1">
-              <h3 className="text-sm font-semibold text-text-primary">
+              <h3 className="text-sm font-semibold font-serif text-text-primary">
                 What We Detect
               </h3>
               <div className="mt-3 grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2">

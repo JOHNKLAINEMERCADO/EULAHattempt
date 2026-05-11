@@ -118,10 +118,10 @@ export default function ExtensionPopup({
 
   return (
     <div
-      className="absolute right-0 top-14 z-50 w-[380px] overflow-hidden rounded-2xl border border-[#E8EDDE] bg-white shadow-2xl shadow-black/10"
+      className="absolute right-0 top-14 z-50 w-95 overflow-hidden rounded-2xl border border-border bg-card shadow-2xl shadow-black/10 dark:border-border dark:bg-card dark:text-text-primary"
     >
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-[#E8EDDE] bg-[#FAFBF7] px-5 py-3.5">
+      <div className="flex items-center justify-between border-b border-border bg-card-secondary px-5 py-3.5 dark:border-border dark:bg-card-secondary">
         <div className="flex items-center gap-2.5">
           <Image
             src="/EULAH-Logo.png"
@@ -130,18 +130,18 @@ export default function ExtensionPopup({
             height={24}
             className="h-6 w-auto"
           />
-          <span className="text-sm font-bold text-[#1a1a1a]">EULAH</span>
+          <span className="text-sm font-bold text-text-primary">EULAH</span>
         </div>
         <div className="flex items-center gap-2">
-          <button className="flex h-7 w-7 items-center justify-center rounded-full text-[#999] transition-colors hover:bg-[#E8EDDE] hover:text-[#666]">
+          <button className="flex h-7 w-7 items-center justify-center rounded-full text-text-secondary transition-colors hover:bg-border hover:text-text-primary dark:text-text-secondary dark:hover:bg-border">
             <Eye className="h-3.5 w-3.5" />
           </button>
-          <button className="flex h-7 w-7 items-center justify-center rounded-full text-[#999] transition-colors hover:bg-[#E8EDDE] hover:text-[#666]">
+          <button className="flex h-7 w-7 items-center justify-center rounded-full text-text-secondary transition-colors hover:bg-border hover:text-text-primary dark:text-text-secondary dark:hover:bg-border">
             <Settings className="h-3.5 w-3.5" />
           </button>
           <button
             onClick={onClose}
-            className="flex h-7 w-7 items-center justify-center rounded-full text-[#999] transition-colors hover:bg-[#E8EDDE] hover:text-[#666]"
+            className="flex h-7 w-7 items-center justify-center rounded-full text-text-secondary transition-colors hover:bg-border hover:text-text-primary dark:text-text-secondary dark:hover:bg-border"
           >
             <X className="h-3.5 w-3.5" />
           </button>
@@ -149,26 +149,26 @@ export default function ExtensionPopup({
       </div>
 
       {/* Document Info */}
-      <div className="flex items-center gap-2 border-b border-[#E8EDDE] px-5 py-2.5 text-xs text-[#888]">
-        <FileText className="h-3.5 w-3.5 text-[#9BC53D]" />
-        <span className="text-[#4a4a4a]">Terms of Service</span>
-        <span className="text-[#ccc]">|</span>
-        <Clock className="h-3 w-3 text-[#bbb]" />
-        <span>~8 min read</span>
+      <div className="flex items-center gap-2 border-b border-border px-5 py-2.5 text-xs text-text-secondary dark:border-border dark:text-text-secondary">
+        <FileText className="h-3.5 w-3.5 text-eulah" />
+        <span className="text-text-primary">Terms of Service</span>
+        <span className="text-text-muted">|</span>
+        <Clock className="h-3 w-3 text-text-muted" />
+        <span className="text-text-secondary">~8 min read</span>
       </div>
 
       {/* Safety Score */}
       <div className="px-5 py-4">
         <div className="flex items-center justify-between">
-          <span className="text-sm font-semibold text-[#1a1a1a]">
+          <span className="text-sm font-semibold text-text-primary">
             Safety Score
           </span>
           <div className="flex items-center gap-1.5">
             <AlertTriangle className="h-3.5 w-3.5 text-red-400" />
-            <span className="text-lg font-bold text-red-400">{safetyScore}</span>
+            <span className="text-lg font-bold font-serif text-red-400">{safetyScore}</span>
           </div>
         </div>
-        <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-[#E8EDDE]">
+        <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-border dark:bg-neutral-800">
           <div
             className="h-full rounded-full bg-red-400 transition-all duration-500"
             style={{ width: `${safetyScore}%` }}
@@ -177,11 +177,11 @@ export default function ExtensionPopup({
       </div>
 
       {/* Tabs */}
-      <div className="relative flex border-b border-[#E8EDDE]">
+      <div className="relative flex border-b border-border dark:border-border">
         <button
           onClick={() => setActiveTab("risks")}
           className={`flex-1 pb-3 pt-2 text-sm font-semibold transition-colors ${
-            activeTab === "risks" ? "text-[#9BC53D]" : "text-[#888]"
+            activeTab === "risks" ? "text-eulah" : "text-text-secondary"
           }`}
         >
           Risks (4)
@@ -189,30 +189,30 @@ export default function ExtensionPopup({
         <button
           onClick={() => setActiveTab("summary")}
           className={`flex-1 pb-3 pt-2 text-sm font-semibold transition-colors ${
-            activeTab === "summary" ? "text-[#9BC53D]" : "text-[#888]"
+            activeTab === "summary" ? "text-eulah" : "text-text-secondary"
           }`}
         >
           Summary
         </button>
         <div
-          className="absolute bottom-0 h-[2.5px] w-1/2 rounded-full bg-[#9BC53D] transition-all duration-300 ease-out"
+          className="absolute bottom-0 h-[2.5px] w-1/2 rounded-full bg-eulah transition-all duration-300 ease-out"
           style={{ left: `${tabUnderlineLeft}%` }}
         />
       </div>
 
       {/* Tab Content */}
-      <div className="max-h-[400px] overflow-y-auto">
+      <div className="max-h-100 overflow-y-auto">
         {activeTab === "risks" && (
           <div className="p-4">
             {/* All Risks Dropdown */}
-            <button className="mb-3 flex w-full items-center justify-between rounded-lg border border-[#E8EDDE] bg-white px-3 py-2 text-xs font-medium text-[#4a4a4a]">
+            <button className="mb-3 flex w-full items-center justify-between rounded-lg border border-border bg-card px-3 py-2 text-xs font-medium text-text-primary transition-colors hover:border-eulah hover:bg-card-secondary dark:border-border dark:bg-card dark:text-text-primary">
               <div className="flex items-center gap-2">
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#E8F5D6]">
-                  <AlertTriangle className="h-2.5 w-2.5 text-[#9BC53D]" />
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-eulah-light dark:bg-eulah-muted">
+                  <AlertTriangle className="h-2.5 w-2.5 text-eulah" />
                 </span>
                 All Risks (4)
               </div>
-              <ChevronDown className="h-3.5 w-3.5 text-[#999]" />
+              <ChevronDown className="h-3.5 w-3.5 text-text-secondary" />
             </button>
 
             {/* Risk Cards */}
@@ -223,7 +223,7 @@ export default function ExtensionPopup({
                 return (
                   <div
                     key={risk.id}
-                    className={`rounded-xl border ${cfg.border} ${cfg.bg} p-4`}
+                    className={`rounded-xl border ${cfg.border} ${cfg.bg} p-4 dark:border-neutral-700 dark:bg-neutral-950/50`}
                   >
                     <button
                       onClick={() => toggleExpand(risk.id)}
@@ -231,7 +231,7 @@ export default function ExtensionPopup({
                     >
                       <div className="flex items-center gap-2">
                         <div
-                          className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full ${cfg.iconBg}`}
+                          className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full ${cfg.iconBg} dark:bg-neutral-800`}
                         >
                           <AlertTriangle
                             className={`h-3 w-3 ${cfg.iconColor}`}
@@ -244,18 +244,18 @@ export default function ExtensionPopup({
                         </span>
                       </div>
                       {isOpen ? (
-                        <ChevronUp className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#999]" />
+                        <ChevronUp className="mt-0.5 h-3.5 w-3.5 shrink-0 text-text-secondary" />
                       ) : (
-                        <ChevronDown className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#999]" />
+                        <ChevronDown className="mt-0.5 h-3.5 w-3.5 shrink-0 text-text-secondary" />
                       )}
                     </button>
 
                     {isOpen && (
                       <div className="mt-2.5 pl-8">
-                        <p className="text-[11px] leading-relaxed text-[#555]">
+                        <p className="text-[11px] leading-relaxed text-text-secondary">
                           {risk.description}
                         </p>
-                        <p className="mt-1.5 text-[10px] text-[#999]">
+                        <p className="mt-1.5 text-[10px] text-text-secondary">
                           {risk.section} &bull; {risk.line}
                         </p>
                       </div>
@@ -271,14 +271,14 @@ export default function ExtensionPopup({
           <div className="p-4">
             {/* Stats Row */}
             <div className="mb-4 grid grid-cols-2 gap-3">
-              <div className="rounded-xl border border-red-200 bg-red-50/50 p-3">
-                <p className="text-lg font-bold text-red-500">1</p>
+              <div className="rounded-xl border border-red-200 bg-red-50/50 p-3 dark:border-red-900 dark:bg-red-900/30">
+                <p className="text-lg font-bold font-serif text-red-500">1</p>
                 <p className="text-[11px] font-semibold text-red-600">
                   Critical Issues
                 </p>
               </div>
-              <div className="rounded-xl border border-orange-200 bg-orange-50/50 p-3">
-                <p className="text-lg font-bold text-orange-500">2</p>
+              <div className="rounded-xl border border-orange-200 bg-orange-50/50 p-3 dark:border-orange-900 dark:bg-orange-900/30">
+                <p className="text-lg font-bold font-serif text-orange-500">2</p>
                 <p className="text-[11px] font-semibold text-orange-600">
                   High Risks
                 </p>
@@ -286,8 +286,8 @@ export default function ExtensionPopup({
             </div>
 
             {/* Key Issues Found */}
-            <div className="mb-4 rounded-xl border border-[#E8EDDE] bg-[#FAFBF7] p-4">
-              <h4 className="mb-2.5 text-xs font-bold text-[#1a1a1a]">
+            <div className="mb-4 rounded-xl border border-border bg-card-secondary p-4 dark:border-border dark:bg-card-secondary">
+              <h4 className="mb-2.5 text-xs font-bold text-text-primary">
                 Key Issues Found
               </h4>
               <ul className="space-y-2">
@@ -299,9 +299,9 @@ export default function ExtensionPopup({
                 ].map((item, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-2 text-[11px] text-[#555]"
+                    className="flex items-start gap-2 text-[11px] text-text-secondary"
                   >
-                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#9BC53D]" />
+                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-eulah" />
                     {item}
                   </li>
                 ))}
@@ -309,14 +309,14 @@ export default function ExtensionPopup({
             </div>
 
             {/* Recommendation */}
-            <div className="rounded-xl border border-red-200 bg-red-50/50 p-4">
+            <div className="rounded-xl border border-red-200 bg-red-50/50 p-4 dark:border-red-900 dark:bg-red-900/30">
               <div className="mb-2 flex items-center gap-1.5">
                 <Info className="h-3 w-3 text-red-500" />
                 <span className="text-[10px] font-bold uppercase tracking-wide text-red-500">
                   Recommendation
                 </span>
               </div>
-              <p className="text-[11px] leading-relaxed text-[#555]">
+              <p className="text-[11px] leading-relaxed text-text-secondary">
                 This agreement contains multiple high-risk clauses. Review
                 carefully before accepting, especially auto-renewal and data
                 sharing terms.
@@ -327,12 +327,12 @@ export default function ExtensionPopup({
       </div>
 
       {/* Bottom Actions */}
-      <div className="flex items-center gap-3 border-t border-[#E8EDDE] bg-[#FAFBF7] px-5 py-3.5">
-        <button className="flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-[#E8EDDE] bg-white px-4 py-2.5 text-xs font-semibold text-[#4a4a4a] transition-colors hover:bg-[#F5F6F2]">
+      <div className="flex items-center gap-3 border-t border-border bg-card-secondary px-5 py-3.5 dark:border-border dark:bg-card-secondary">
+        <button className="flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-border bg-card px-4 py-2.5 text-xs font-semibold text-text-primary transition-colors hover:bg-card-secondary dark:border-border dark:bg-card dark:text-text-primary dark:hover:bg-card-secondary">
           <Download className="h-3.5 w-3.5" />
           Export
         </button>
-        <button className="flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-[#9BC53D] px-4 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-[#7a9c2e]">
+        <button className="flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-eulah px-4 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-eulah-dark">
           <ExternalLink className="h-3.5 w-3.5" />
           Full Report
         </button>

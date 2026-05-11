@@ -17,7 +17,7 @@ export default function BenefitsSection() {
           <div className="flex h-8 w-8 items-center justify-center rounded-full bg-eulah-light">
             <Sparkles className="h-4 w-4 text-eulah" />
           </div>
-          <h2 className="text-xl font-bold text-text-primary">Who Benefits?</h2>
+          <h2 className="text-xl font-bold font-serif text-text-primary">Who Benefits?</h2>
         </div>
         <p className="text-sm text-text-secondary">
           Built for everyone who values transparency and digital rights
@@ -32,10 +32,10 @@ export default function BenefitsSection() {
               key={b.title}
               className="flex flex-col gap-3 rounded-2xl border border-border bg-card p-5 transition-shadow hover:shadow-md"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-eulah-light">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-eulah-light dark:bg-[#15240d]">
                 <Icon className="h-5 w-5 text-eulah" />
               </div>
-              <p className="text-sm font-semibold text-text-primary">{b.title}</p>
+              <p className="text-sm font-semibold font-serif text-text-primary">{b.title}</p>
               <p className="text-[11px] leading-relaxed text-text-muted">{b.desc}</p>
             </div>
           );

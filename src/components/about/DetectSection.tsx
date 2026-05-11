@@ -16,7 +16,7 @@ export default function DetectSection() {
     <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
       <div className="mb-4 flex items-center gap-2">
         <Check className="h-4 w-4 text-eulah" />
-        <h3 className="text-sm font-bold text-text-primary">What We Detect</h3>
+        <h3 className="text-sm font-bold font-serif text-text-primary">What We Detect</h3>
       </div>
       <div className="space-y-3">
         {whatWeDetect.map((item) => {
@@ -26,11 +26,11 @@ export default function DetectSection() {
               key={item.title}
               className="flex items-start gap-3 rounded-xl border border-border bg-card-secondary p-3"
             >
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-eulah-light">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-eulah-light dark:bg-[#15240d]">
                 <Icon className="h-4 w-4 text-eulah" />
               </div>
               <div>
-                <p className="text-xs font-semibold text-text-primary">{item.title}</p>
+                <p className="text-xs font-semibold font-serif text-text-primary">{item.title}</p>
                 <p className="text-[11px] text-text-muted">{item.desc}</p>
               </div>
             </div>

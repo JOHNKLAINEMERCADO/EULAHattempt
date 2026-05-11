@@ -15,7 +15,7 @@ export default function WorksEverywhereSection() {
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:justify-between">
           <div className="max-w-md">
-            <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">
+            <h2 className="text-3xl font-bold font-serif text-text-primary sm:text-4xl">
               Works{" "}
               <span className="text-eulah">Everywhere</span>
             </h2>

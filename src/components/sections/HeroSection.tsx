@@ -9,14 +9,14 @@ export default function HeroSection() {
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex max-w-xl flex-col gap-6">
-            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-eulah-muted bg-eulah-light px-4 py-1.5 text-xs font-medium text-eulah-dark">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#9BC53D]" />
+            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-eulah-muted bg-eulah-light px-4 py-1.5 text-xs font-medium text-eulah-dark dark:border-[#42501d] dark:bg-[#15240d] dark:text-[#cfe9ad]">
+              <span className="h-1.5 w-1.5 rounded-full bg-eulah" />
               Browser Extension &bull; Works Everywhere
             </div>
 
-            <h1 className="text-4xl font-bold leading-tight tracking-tight text-text-primary sm:text-5xl">
+            <h1 className="text-4xl font-bold font-serif leading-tight tracking-tight text-text-primary sm:text-5xl">
               Never Get{" "}
-              <span className="text-[#9BC53D]">Blindsided</span>
+              <span className="text-eulah">Blindsided</span>
               <br />
               By Legal Fine Print
             </h1>
@@ -26,14 +26,14 @@ export default function HeroSection() {
               browse &mdash; right before you click &quot;I Agree.&quot;
             </p>
 
-            <div className="flex flex-col gap-4">
-              <button className="inline-flex w-fit items-center justify-center gap-2 rounded-xl bg-[#9BC53D] px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[#8ab535] hover:shadow-md active:scale-[0.98]">
+            <div className="flex w-full flex-col items-center gap-4">
+              <button className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-eulah px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-eulah-dark hover:shadow-md active:scale-[0.98]">
                 <Download className="h-4 w-4" />
                 Install Browser Extension
                 <span className="ml-1 text-xs opacity-80">(FREE)</span>
               </button>
 
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center justify-center gap-3">
                 <div className="flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs text-text-secondary">
                   <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" x2="12" y1="8" y2="8"/><line x1="3.95" x2="8.54" y1="6.06" y2="10"/><line x1="4.58" x2="15.42" y1="16.94" y2="14.36"/></svg>
                   Chrome
@@ -50,7 +50,7 @@ export default function HeroSection() {
 
               <Link
                 href="/analyzer"
-                className="inline-flex w-fit items-center justify-center rounded-xl border-2 border-[#9BC53D] px-6 py-3 text-sm font-semibold text-[#9BC53D] transition-all hover:bg-[#9BC53D] hover:text-white active:scale-[0.98]"
+                className="inline-flex w-full items-center justify-center rounded-xl border-2 border-eulah px-6 py-3 text-sm font-semibold text-eulah transition-all hover:bg-eulah hover:text-white active:scale-[0.98]"
               >
                 <FileText className="mr-2 h-4 w-4" />
                 Analyze a Document Now
@@ -66,12 +66,12 @@ export default function HeroSection() {
                   <span className="h-3 w-3 rounded-full bg-yellow-400" />
                   <span className="h-3 w-3 rounded-full bg-green-400" />
                 </div>
-                <div className="mx-auto flex items-center gap-2 rounded-md bg-eulah-muted px-3 py-1 text-xs text-eulah-dark">
+                <div className="mx-auto flex items-center gap-2 rounded-md bg-eulah-muted px-3 py-1 text-xs text-eulah-dark dark:bg-[#1f2e18] dark:text-[#cfe9ad] dark:border-[#3d4d25]">
                   <FileText className="h-3 w-3" />
                   Terms of Service
                   <span className="text-text-muted">Last updated: March 2026</span>
                 </div>
-                <span className="rounded-md bg-eulah-muted px-2 py-1 text-[10px] text-eulah-dark">
+                <span className="rounded-md bg-eulah-muted px-2 py-1 text-[10px] text-eulah-dark dark:bg-[#1f2e18] dark:text-[#cfe9ad]">
                   Processing...
                 </span>
               </div>
@@ -98,11 +98,11 @@ export default function HeroSection() {
                   <div className="h-3 w-full rounded bg-border" />
                 </div>
 
-                <div className="flex items-center gap-2 rounded-lg border border-eulah-muted bg-eulah-light p-3">
+                <div className="flex items-center gap-2 rounded-lg border border-eulah-muted bg-eulah-light p-3 dark:border-[#3a4d20] dark:bg-[#14270d]">
                   <div className="flex h-5 w-5 items-center justify-center rounded-full bg-eulah">
                     <span className="text-[10px] text-white">✓</span>
                   </div>
-                  <p className="text-xs text-eulah-dark">
+                  <p className="text-xs text-eulah-dark dark:text-[#d3e9b0]">
                     Protected - 47 Clauses Analyzed
                   </p>
                 </div>
