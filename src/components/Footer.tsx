@@ -6,7 +6,7 @@ import { Star, MessageCircle } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-[#E8EDDE] bg-[#F9FAF5] px-6 py-12">
+    <footer className="w-full border-t border-border bg-nav-bg px-6 py-12">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col gap-4">
@@ -18,9 +18,9 @@ export default function Footer() {
                 height={36}
                 className="h-9 w-auto"
               />
-              <span className="text-lg font-bold text-[#1a1a1a]">EULAH</span>
+              <span className="text-lg font-bold text-text-primary">EULAH</span>
             </Link>
-            <p className="text-xs leading-relaxed text-[#888]">
+            <p className="text-xs leading-relaxed text-text-muted">
               Enhanced User License Agreement Handling &mdash; Empowering users
               with AI-assisted legal document analysis to identify hidden risks
               and protect digital rights.

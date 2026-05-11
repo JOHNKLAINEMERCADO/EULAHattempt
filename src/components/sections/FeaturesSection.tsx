@@ -43,14 +43,14 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section className="w-full bg-[#F9FAF5] px-6 py-16">
+    <section className="w-full bg-background px-6 py-16">
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-[#1a1a1a] sm:text-4xl">
+          <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">
             Superhuman{" "}
-            <span className="text-[#9BC53D]">Protection</span>
+            <span className="text-eulah">Protection</span>
           </h2>
-          <p className="mt-3 text-sm text-[#666]">
+          <p className="mt-3 text-sm text-text-secondary">
             Enterprise-grade AI analyzing every clause, phrase, and loophole to
             keep you safe
           </p>
@@ -62,16 +62,16 @@ export default function FeaturesSection() {
             return (
               <div
                 key={feature.title}
-                className="flex flex-col gap-4 rounded-2xl border border-[#E8EDDE] bg-white p-6 transition-shadow hover:shadow-lg hover:shadow-[#9BC53D]/5"
+                className="flex flex-col gap-4 rounded-2xl border border-border bg-card p-6 transition-shadow hover:shadow-lg hover:shadow-eulah/5"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#E8F5D6]">
-                  <Icon className="h-5 w-5 text-[#9BC53D]" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-eulah-light">
+                  <Icon className="h-5 w-5 text-eulah" />
                 </div>
                 <div>
-                  <h3 className="text-base font-semibold text-[#1a1a1a]">
+                  <h3 className="text-base font-semibold text-text-primary">
                     {feature.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#666]">
+                  <p className="mt-2 text-sm leading-relaxed text-text-secondary">
                     {feature.description}
                   </p>
                 </div>

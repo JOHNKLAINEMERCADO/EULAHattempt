@@ -77,48 +77,48 @@ export default function AnalyzerPage() {
   }, [text, setResult, setIsAnalyzing, setError, router]);
 
   return (
-    <div className="flex min-h-full flex-col bg-[#F9FAF5]">
+    <div className="flex min-h-full flex-col bg-background">
       <Navbar />
       <main className="flex flex-1 flex-col items-center px-6 py-10">
         <div className="mx-auto w-full max-w-3xl">
           {/* Page badge */}
           <div className="mb-6 flex justify-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#C5D9A6] bg-[#E8F5D6] px-4 py-1.5 text-xs font-medium text-[#5a7a2e]">
+            <div className="inline-flex items-center gap-2 rounded-full border border-eulah-muted bg-eulah-light px-4 py-1.5 text-xs font-medium text-eulah-dark">
               <Sparkles className="h-3.5 w-3.5" />
               AI-Assisted Analysis
             </div>
           </div>
 
           {/* Title */}
-          <h1 className="text-center text-4xl font-bold tracking-tight text-[#1a1a1a] sm:text-5xl">
+          <h1 className="text-center text-4xl font-bold tracking-tight text-text-primary sm:text-5xl">
             Document{" "}
             <span className="text-[#9BC53D]">Analyzer</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="mx-auto mt-4 max-w-lg text-center text-sm leading-relaxed text-[#666]">
+          <p className="mx-auto mt-4 max-w-lg text-center text-sm leading-relaxed text-text-secondary">
             Paste your legal document or upload a file. Our AI will expose
             hidden risks in seconds.
           </p>
 
           {/* Document Input Card */}
-          <div className="mt-8 rounded-2xl border border-[#E8EDDE] bg-white p-6 shadow-sm">
+          <div className="mt-8 rounded-2xl border border-border bg-card p-6 shadow-sm">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-sm font-semibold text-[#1a1a1a]">
+              <h2 className="text-sm font-semibold text-text-primary">
                 Legal Document Text
               </h2>
-              <div className="flex items-center gap-4 text-xs text-[#9BC53D]">
+              <div className="flex items-center gap-4 text-xs text-eulah">
                 <button
                   onClick={loadSample}
                   disabled={isAnalyzing}
-                  className="inline-flex items-center gap-1.5 transition-colors hover:text-[#7a9c2e] disabled:opacity-50"
+                  className="inline-flex items-center gap-1.5 transition-colors hover:text-eulah-dark disabled:opacity-50"
                 >
                   <Sparkles className="h-3.5 w-3.5" />
                   Load Sample
                 </button>
                 <button
                   disabled={isAnalyzing}
-                  className="inline-flex items-center gap-1.5 transition-colors hover:text-[#7a9c2e] disabled:opacity-50"
+                  className="inline-flex items-center gap-1.5 transition-colors hover:text-eulah-dark disabled:opacity-50"
                 >
                   <Upload className="h-3.5 w-3.5" />
                   Upload File
@@ -132,9 +132,9 @@ export default function AnalyzerPage() {
                 onChange={(e) => setText(e.target.value)}
                 disabled={isAnalyzing}
                 placeholder={`Paste your Terms of Service, Privacy Policy, EULA, or any legal document here...\n\nWe'll analyze it and highlight potential risks like:\n• Automatic subscription renewals\n• Data collection and sharing\n• Forced arbitration clauses\n• Liability waivers\n• Unilateral term changes\n• And much more...`}
-                className="min-h-[280px] w-full resize-none rounded-xl border border-[#E8EDDE] bg-[#FAFBF7] p-4 text-sm leading-relaxed text-[#333] placeholder:text-[#999] focus:border-[#9BC53D] focus:outline-none focus:ring-1 focus:ring-[#9BC53D] disabled:opacity-60"
+                className="min-h-[280px] w-full resize-none rounded-xl border border-border bg-card-secondary p-4 text-sm leading-relaxed text-text-primary placeholder:text-text-muted focus:border-eulah focus:outline-none focus:ring-1 focus:ring-eulah disabled:opacity-60"
               />
-              <span className="absolute bottom-3 right-3 rounded-full border border-[#E8EDDE] bg-white px-2.5 py-1 text-[10px] text-[#888]">
+              <span className="absolute bottom-3 right-3 rounded-full border border-border bg-card px-2.5 py-1 text-[10px] text-text-muted">
                 {text.length} characters
               </span>
             </div>
@@ -148,7 +148,7 @@ export default function AnalyzerPage() {
             <button
               onClick={handleAnalyze}
               disabled={isAnalyzing || !text.trim()}
-              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#C5D9A6] px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-[#9BC53D] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
+              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-eulah px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-eulah-dark active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
             >
               {isAnalyzing ? (
                 <>
@@ -171,12 +171,12 @@ export default function AnalyzerPage() {
               return (
                 <div
                   key={cat.label}
-                  className="flex flex-col items-center gap-3 rounded-2xl border border-[#E8EDDE] bg-white p-5 transition-shadow hover:shadow-md"
+                  className="flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-5 transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E8F5D6]">
-                    <Icon className="h-5 w-5 text-[#9BC53D]" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-eulah-light">
+                    <Icon className="h-5 w-5 text-eulah" />
                   </div>
-                  <span className="text-xs font-semibold text-[#1a1a1a]">
+                  <span className="text-xs font-semibold text-text-primary">
                     {cat.label}
                   </span>
                 </div>
@@ -185,12 +185,12 @@ export default function AnalyzerPage() {
           </div>
 
           {/* What We Detect */}
-          <div className="mt-8 flex items-start gap-4 rounded-2xl border border-[#E8EDDE] bg-white p-6">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#9BC53D]">
+          <div className="mt-8 flex items-start gap-4 rounded-2xl border border-border bg-card p-6">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-eulah">
               <Sparkles className="h-5 w-5 text-white" />
             </div>
             <div className="flex-1">
-              <h3 className="text-sm font-semibold text-[#1a1a1a]">
+              <h3 className="text-sm font-semibold text-text-primary">
                 What We Detect
               </h3>
               <div className="mt-3 grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2">
@@ -198,9 +198,9 @@ export default function AnalyzerPage() {
                   {detectionsLeft.map((item) => (
                     <li
                       key={item}
-                      className="flex items-center gap-2 text-xs text-[#666]"
+                      className="flex items-center gap-2 text-xs text-text-secondary"
                     >
-                      <Check className="h-3 w-3 shrink-0 text-[#9BC53D]" />
+                      <Check className="h-3 w-3 shrink-0 text-eulah" />
                       {item}
                     </li>
                   ))}
@@ -209,9 +209,9 @@ export default function AnalyzerPage() {
                   {detectionsRight.map((item) => (
                     <li
                       key={item}
-                      className="flex items-center gap-2 text-xs text-[#666]"
+                      className="flex items-center gap-2 text-xs text-text-secondary"
                     >
-                      <Check className="h-3 w-3 shrink-0 text-[#9BC53D]" />
+                      <Check className="h-3 w-3 shrink-0 text-eulah" />
                       {item}
                     </li>
                   ))}

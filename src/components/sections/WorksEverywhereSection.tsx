@@ -11,15 +11,15 @@ const benefits = [
 
 export default function WorksEverywhereSection() {
   return (
-    <section className="w-full bg-[#F9FAF5] px-6 py-16">
+    <section className="w-full bg-background px-6 py-16">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:justify-between">
           <div className="max-w-md">
-            <h2 className="text-3xl font-bold text-[#1a1a1a] sm:text-4xl">
+            <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">
               Works{" "}
-              <span className="text-[#9BC53D]">Everywhere</span>
+              <span className="text-eulah">Everywhere</span>
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-[#666]">
+            <p className="mt-4 text-sm leading-relaxed text-text-secondary">
               EULAH automatically scans every Terms of Service, Privacy Policy,
               and EULA you encounter online. No need to copy-paste or leave the
               page.
@@ -29,9 +29,9 @@ export default function WorksEverywhereSection() {
               {benefits.map((benefit) => (
                 <li
                   key={benefit}
-                  className="flex items-center gap-3 text-sm text-[#4a4a4a]"
+                  className="flex items-center gap-3 text-sm text-text-secondary"
                 >
-                  <CheckCircle className="h-5 w-5 shrink-0 text-[#9BC53D]" />
+                  <CheckCircle className="h-5 w-5 shrink-0 text-eulah" />
                   {benefit}
                 </li>
               ))}
@@ -39,14 +39,14 @@ export default function WorksEverywhereSection() {
           </div>
 
           <div className="w-full max-w-md">
-            <div className="overflow-hidden rounded-2xl border border-[#E8EDDE] bg-white shadow-lg">
-              <div className="flex items-center gap-2 border-b border-[#f0f0f0] bg-[#fafafa] px-4 py-3">
+            <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
+              <div className="flex items-center gap-2 border-b border-border bg-card-secondary px-4 py-3">
                 <div className="flex gap-1.5">
                   <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
                   <span className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
                   <span className="h-2.5 w-2.5 rounded-full bg-green-400" />
                 </div>
-                <span className="ml-2 rounded bg-[#E8EDDE] px-2 py-0.5 text-[10px] text-[#5a7a2e]">
+                <span className="ml-2 rounded bg-eulah-muted px-2 py-0.5 text-[10px] text-eulah-dark">
                   example.com/terms-of-service
                 </span>
               </div>
@@ -68,11 +68,11 @@ export default function WorksEverywhereSection() {
                 </div>
 
                 <div className="space-y-2">
-                  <div className="h-2.5 w-full rounded bg-[#f0f0f0]" />
-                  <div className="h-2.5 w-10/12 rounded bg-[#f0f0f0]" />
-                  <div className="h-2.5 w-11/12 rounded bg-red-100" />
-                  <div className="h-2.5 w-9/12 rounded bg-[#f0f0f0]" />
-                  <div className="h-2.5 w-full rounded bg-[#f0f0f0]" />
+                  <div className="h-2.5 w-full rounded bg-border" />
+                  <div className="h-2.5 w-10/12 rounded bg-border" />
+                  <div className="h-2.5 w-11/12 rounded bg-red-100 dark:bg-red-900/30" />
+                  <div className="h-2.5 w-9/12 rounded bg-border" />
+                  <div className="h-2.5 w-full rounded bg-border" />
                 </div>
               </div>
             </div>
